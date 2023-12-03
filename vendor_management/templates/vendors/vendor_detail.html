@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vendor Detail</title>
+    
+</head>
+<body>
+
+  <h1>Vendor Detail</h1>
+
+  <table>
+    <tr>
+      <th>Name:</th>
+      <td>{{ vendor.name }}</td>
+    </tr>
+    <tr>
+      <th>Contact Person:</th>
+      <td>{{ vendor.contact_person }}</td>
+    </tr>
+    <tr>
+      <th>Email:</th>
+      <td>{{ vendor.email }}</td>
+    </tr>
+    <tr>
+      <th>Phone:</th>
+      <td>{{ vendor.phone }}</td>
+    </tr>
+  </table>
+
+  <p><a href="{% url 'vendor_list' %}">Back to Vendor List</a></p>
+
+</body>
+</html>

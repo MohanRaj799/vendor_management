@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vendor List</title>
+    
+</head>
+<body>
+
+  <h1>Vendor List</h1>
+
+  <p><a href="{% url 'vendor_new' %}">Add New Vendor</a></p>
+
+  <table border="2">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Contact Person</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for vendor in vendors %}
+        <tr>
+          <td>{{ vendor.name }}</td>
+          <td>{{ vendor.contact_person }}</td>
+          <td>{{ vendor.email }}</td>
+          <td>{{ vendor.phone }}</td>
+          <td>
+            <a href="{% url 'vendor_detail' pk=vendor.pk %}">View</a> |
+            <a href="{% url 'vendor_edit' pk=vendor.pk %}">Edit</a> |
+            <a href="{% url 'vendor_delete' pk=vendor.pk %}">Delete</a>
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+</body>
+</html>
